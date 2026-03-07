@@ -65,10 +65,10 @@ export async function GET(req: NextRequest) {
   const events = filtered.map((b) => {
     const status = b.status === 'cancelled' ? 'CANCELLED' : 'CONFIRMED';
     const desc = `${b.channel} | ${b.status} | ${b.guestsCount}p | ${b.totalAmount}€`;
-    const lastMod = (b.updatedAt ?? b.createdAt ?? '')
-      .replace(/[-:]/g, '')
-      .replace(/\.\d+/, '')
-      .replace('T', 'T') + 'Z';
+    const raw = b.updatedAt ?? b.createdAt ?? '';
+    const lastMod = raw
+      ? raw.replace(/[-:]/g, '').replace(/\.\d+Z?$/, 'Z')
+      : '';
     const lines = [
       'BEGIN:VEVENT',
       foldLine(`UID:${b.id}@villa-olimpia`),
