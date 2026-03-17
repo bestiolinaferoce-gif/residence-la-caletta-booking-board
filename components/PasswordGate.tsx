@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const SESSION_KEY = "villa-olimpia:auth";
+const SESSION_KEY = "la-caletta:auth";
 
 export function PasswordGate({ children }: { children: React.ReactNode }) {
   const [unlocked, setUnlocked] = useState(false);
@@ -32,9 +31,9 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
   return (
     <div className="auth-gate">
       <div className="auth-card">
-        <Image src="/logo-villa-olimpia.png" alt="Villa Olimpia" width={72} height={72} className="auth-logo" />
+        <div className="auth-icon">🌊</div>
         <div className="auth-titles">
-          <h1>Villa Olimpia</h1>
+          <h1>Residence La Caletta</h1>
           <p>Booking Board</p>
         </div>
         <form

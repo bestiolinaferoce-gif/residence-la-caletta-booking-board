@@ -12,9 +12,9 @@ import {
 } from "date-fns";
 import type { Booking, BookingFilters } from "@/lib/types";
 
-export const STORAGE_KEY = "villa-olimpia-booking-board:v1";
-export const BACKUP_KEY = "villa-olimpia-booking-board:backups:v1";
-export const SETTINGS_KEY = "villa-olimpia-booking-board:settings:v1";
+export const STORAGE_KEY = "la-caletta-booking-board:v1";
+export const BACKUP_KEY = "la-caletta-booking-board:backups:v1";
+export const SETTINGS_KEY = "la-caletta-booking-board:settings:v1";
 
 export const statusColors: Record<Booking["status"], string> = {
   confirmed: "#16a34a",
@@ -48,15 +48,16 @@ export const statusBadge: Record<Booking["status"], BadgeStyle> = {
 };
 
 export const LODGE_COLORS_MAP: Record<string, string> = {
-  Frangipane: "#8b5cf6",
-  Fiordaliso: "#3b82f6",
-  Giglio: "#10b981",
-  Tulipano: "#f43f5e",
-  Orchidea: "#ec4899",
-  Lavanda: "#a78bfa",
-  Geranio: "#f97316",
-  Gardenia: "#14b8a6",
-  Azalea: "#e11d48",
+  "Standard 1": "#0ea5e9",
+  "Standard 2": "#06b6d4",
+  "Standard 3": "#10b981",
+  "Standard 4": "#14b8a6",
+  "Standard 5": "#3b82f6",
+  "Standard 6": "#22d3ee",
+  "Standard 7": "#818cf8",
+  "Standard 8": "#34d399",
+  "Attico A":   "#f59e0b",
+  "Attico B":   "#f97316",
 };
 
 export const channelBadge: Record<Booking["channel"], BadgeStyle> = {

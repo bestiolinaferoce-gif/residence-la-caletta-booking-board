@@ -1,7 +1,6 @@
 "use client";
 
 import { addDays, endOfMonth, format, getMonth, getYear, isBefore, parseISO, startOfMonth } from "date-fns";
-import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { GanttBoard } from "@/components/GanttBoard";
 import { BookingDialog } from "@/components/BookingDialog";
@@ -154,7 +153,7 @@ export default function Home() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `villa-olimpia-booking-board-${format(monthDate, "yyyy-MM")}.json`;
+    a.download = `la-caletta-booking-board-${format(monthDate, "yyyy-MM")}.json`;
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -299,9 +298,8 @@ export default function Home() {
       />
 
       <section className="print-title">
-        <Image src="/logo-villa-olimpia.png" alt="" width={36} height={36} className="print-logo" />
         <div>
-          <h2>Villa Olimpia — Booking Board</h2>
+          <h2>Residence La Caletta — Booking Board</h2>
           <p>{format(monthDate, "MMMM yyyy")}</p>
         </div>
       </section>

@@ -67,6 +67,12 @@ textarea {
   object-fit: contain;
 }
 
+.header-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 .title-row h1 {
   margin: 0;
   font-size: 1.5rem;
@@ -484,6 +490,12 @@ textarea {
 .auth-logo {
   margin: 0 auto;
   object-fit: contain;
+}
+
+.auth-icon {
+  font-size: 3rem;
+  line-height: 1;
+  text-align: center;
 }
 
 .auth-titles h1 {

@@ -3,7 +3,7 @@ import type { Booking } from '@/lib/types';
 
 const BASE = process.env.KV_REST_API_URL ?? '';
 const TOKEN = process.env.KV_REST_API_TOKEN ?? '';
-const KEY = 'vob_bookings';
+const KEY = 'lcb_bookings';
 
 function toIcalDate(iso: string): string {
   return iso.slice(0, 10).replace(/-/g, '');
@@ -71,13 +71,13 @@ export async function GET(req: NextRequest) {
       : '';
     const lines = [
       'BEGIN:VEVENT',
-      foldLine(`UID:${b.id}@villa-olimpia`),
+      foldLine(`UID:${b.id}@la-caletta`),
       `DTSTAMP:${now}`,
       `DTSTART;VALUE=DATE:${toIcalDate(b.checkIn)}`,
       `DTEND;VALUE=DATE:${toIcalDate(b.checkOut)}`,
       foldLine(`SUMMARY:${escapeIcal(b.guestName)} — ${escapeIcal(b.lodge)}`),
       foldLine(`DESCRIPTION:${escapeIcal(desc)}`),
-      foldLine(`LOCATION:Villa Olimpia — ${escapeIcal(b.lodge)}`),
+      foldLine(`LOCATION:Residence La Caletta — ${escapeIcal(b.lodge)}`),
       `STATUS:${status}`,
       ...(lastMod ? [`LAST-MODIFIED:${lastMod}`] : []),
       'END:VEVENT',
@@ -88,12 +88,12 @@ export async function GET(req: NextRequest) {
   const cal = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Villa Olimpia//Booking Board//IT',
+    'PRODID:-//Residence La Caletta//Booking Board//IT',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
-    foldLine('X-WR-CALNAME:Villa Olimpia — Booking Board'),
+    foldLine('X-WR-CALNAME:Residence La Caletta — Booking Board'),
     'X-WR-TIMEZONE:Europe/Rome',
-    'X-WR-CALDESC:Prenotazioni Villa Olimpia',
+    'X-WR-CALDESC:Prenotazioni Residence La Caletta',
     ...events,
     'END:VCALENDAR',
   ].join('\r\n');
@@ -101,7 +101,7 @@ export async function GET(req: NextRequest) {
   return new NextResponse(cal, {
     headers: {
       'Content-Type': 'text/calendar; charset=utf-8',
-      'Content-Disposition': 'attachment; filename="villa-olimpia.ics"',
+      'Content-Disposition': 'attachment; filename="la-caletta.ics"',
       'Cache-Control': 'no-store',
     },
   });

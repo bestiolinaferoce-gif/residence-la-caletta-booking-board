@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { STORAGE_KEY } from "@/lib/utils";
 
-const MIGRATION_KEY = "villa-olimpia:migration-done";
+const MIGRATION_KEY = "la-caletta:migration-done";
 
 export function MigrationHelper() {
   const [banner, setBanner] = useState<string | null>(null);

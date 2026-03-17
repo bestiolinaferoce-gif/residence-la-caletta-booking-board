@@ -1,13 +1,14 @@
 export const LODGES = [
-  "Frangipane",
-  "Fiordaliso",
-  "Giglio",
-  "Tulipano",
-  "Orchidea",
-  "Lavanda",
-  "Geranio",
-  "Gardenia",
-  "Azalea",
+  "Standard 1",
+  "Standard 2",
+  "Standard 3",
+  "Standard 4",
+  "Standard 5",
+  "Standard 6",
+  "Standard 7",
+  "Standard 8",
+  "Attico A",
+  "Attico B",
 ] as const;
 
 export const BOOKING_STATUSES = ["confirmed", "option", "blocked", "cancelled"] as const;
